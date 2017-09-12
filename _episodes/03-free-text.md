@@ -140,7 +140,10 @@ Open the `gulliver-clean.txt` in a text editor. Note how the text has been trans
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -r > gulliver-final.txt
+$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
+("-n" because it's a numeric sort)
+(or, to change all kind of (repeated)whitespaces to newline)
+$ sed 's/\s\+/\n/g' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
 ~~~
 {: .bash}
 
