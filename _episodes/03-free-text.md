@@ -240,7 +240,7 @@ $ sed 's/\s\+/\n/g' < 000003160_01_text-clean.txt | sort | uniq -c | sort -nr > 
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part uses `sed` command to transform every single or repeated space (including tabs) into `\n` which renders as a new line: `\s` means 'space or tab', `\+` means 'one or more times'. Every word in the file will at this stage have its own line. 
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -361,7 +361,7 @@ Open the `diary-clean.txt` in a text editor. Note how the text has been transfor
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -r > diary-final.txt
+$ sed 's/\s\+/\n/g' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
 ~~~
 {: .bash}
 
@@ -371,7 +371,7 @@ The second part uses the `sort` command to rearrange the text from its original 
 
 The third part uses `uniq`, another new command, in combination with the `-c` flag to remove duplicate lines and to produce a word count of those duplicates.
 
-The fourth and final part sorts the text again by the counts of duplicates generated in step three.
+The fourth and final part sorts the text again by the counts of duplicates generated in step three: `-n` flag is used for numeric sort (different from alphabetic sort), `-r` means 'reverse sort order'
 
 We have now taken the text apart and produced a 
 count for each word in it. This is data we can prod and poke 
