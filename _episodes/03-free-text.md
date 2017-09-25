@@ -144,7 +144,7 @@ $ sed 's/\s\+/\n/g' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part uses `sed` command to transform every single or repeated space (including tabs) into `\n` which renders as a new line: `\s` means 'space or tab', `\+` means 'one or more times'. Every word in the file will at this stage have its own line. 
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part uses `sed` command to transform every single or repeated whitespace (including tabs) into `\n` which renders as a new line: `\s` means 'space or tab', `\+` means 'one or more times'. Every word in the file will at this stage have its own line. 
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -240,7 +240,7 @@ $ sed 's/\s\+/\n/g' < 000003160_01_text-clean.txt | sort | uniq -c | sort -nr > 
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part uses `sed` command to transform every single or repeated space (including tabs) into `\n` which renders as a new line: `\s` means 'space or tab', `\+` means 'one or more times'. Every word in the file will at this stage have its own line. 
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part uses `sed` command to transform every single or repeated whitespace (including tabs) into `\n` which renders as a new line: `\s` means 'space or tab', `\+` means 'one or more times'. Every word in the file will at this stage have its own line. 
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -365,7 +365,7 @@ $ sed 's/\s\+/\n/g' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part uses `sed` command to transform every single or repeated space (including tabs) into `\n` which renders as a new line: `\s` means 'space or tab', `\+` means 'one or more times'. Every word in the file will at this stage have its own line. 
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part uses `sed` command to transform every single or repeated whitespace (including tabs) into `\n` which renders as a new line: `\s` means 'space or tab', `\+` means 'one or more times'. Every word in the file will at this stage have its own line. 
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
