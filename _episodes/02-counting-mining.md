@@ -768,3 +768,39 @@ Amy
 7933
 ~~~
 {: .output}
+
+From this example, we can see that a loop is used to repeat commands for each item in a list.
+On each iteration, the loop variable takes the next value from the list.
+We access the value held in the variable using the `$` symbol immediately before the name of the variable.
+
+Now let's examine the syntax of that loop
+
+```
+for loop_variable in list_of_things	# 'for' keyword introduces loop
+					# items in list_of_things are separated by spaces
+do					# marks the start of the statements to be executed
+	command $variable		# execute command(s)
+					# use $variable to access each item in the list
+done					# marks the end of the loop
+```
+{: .bash}
+
+> ## Use a loop to make back ups of all text files in a directory
+> Complete the blanks. Don't forget you can test your answer by trying the commands in the shell.
+> ```
+> ___ file in *.txt
+> __
+> 	cp _file _file-backup
+> ____
+> ```
+> {: .bash}
+> > ## Solution
+> > ```
+> > for file in *.txt
+> > do
+> >	cp $file $file-backup
+> > done
+> > ```
+> > {: .bash}
+> {: .solution}
+{: .challenge}
