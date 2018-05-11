@@ -751,20 +751,20 @@ and count the number of times it appears. The results will print to the screen.
 $ for name in "Jo" "Meg" "Beth" "Amy"
 > do
 >    echo $name
->    grep $name littlewomen.txt | wc -w
+>    grep -ow $name littlewomen.txt | wc -l
 > done
 ~~~
 
 {: .bash}
 
 ~~~
-Jo
-18877
-Meg
-8314
-Beth
-5684
-Amy
-7933
+Jo:
+1355
+Meg:
+683
+Beth:
+459
+Amy:
+645
 ~~~
 {: .output}
