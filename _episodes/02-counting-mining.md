@@ -491,7 +491,7 @@ adding `> results/`, followed by a filename (ideally in .txt format), will save 
 So far we have counted strings in file and printed to the shell or to
 file those counts. But the real power of `grep` comes in that you can
 also use it to create subsets of tabulated data (or indeed any data)
-from one or multiple files.  
+from one or multiple files.
 
 ~~~
 $ grep -i revolution *.tsv
@@ -734,7 +734,14 @@ Pair up with your neighbor and work on these exercies:
 
 We will now use a loop to automate the counting of certain words within a document.
 
-Go to <http://www.gutenberg.org/cache/epub/514/pg514.txt> and save the file to your Desktop.
+We will use **Little Women** from Project Gutenberg: <http://www.gutenberg.org/cache/epub/514/pg514.txt>. This file is inside of your shell-lesson folder as `pg514.txt`, but let's learn how to download it via an unix command called `curl`.
+
+~~~
+curl -O http://www.gutenberg.org/cache/epub/514/pg514.txt
+~~~
+
+`curl` stands for Client for URLs and is a command that lets us grab files and other things off the web. `-O` tells `curl` to download the file to your working directory by the original file name. 
+
 
 We will now rename the file.
 
