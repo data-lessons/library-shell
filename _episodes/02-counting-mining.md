@@ -281,18 +281,18 @@ programming languages.
 >{: .bash}
 >
 >
->Now let's change the scenario. Imagine that we have a directory containing 100 `csv` files. We want to know the 10 files that contain the most words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
+>Now let's change the scenario. Imagine that we have a directory containing 100 `csv` files. We want to know the 10 files that contain the most words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words.  `wc` prints a line showing the total number of words.  You will need to remove this from the output. (Hint: The sort command sorts in ascending order by default).
 >
 >~~~
->__ -w *.csv | sort | ____
+>__ -w *.csv | sort -n | ____ | ____
 >~~~
 >{: .bash}
 >
 > > ## Solution
 > >
-> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 10 lines using the `tail` command.
+> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 11 lines using the `tail` command.  This will include the total line (which is always printed last), so we extract the first 10 lines of the file to remove it.
 > >~~~
-> > wc -w *.csv | sort | tail -n 10
+> > wc -w *.csv | sort -n | tail -n 11 |head -n 10
 > >~~~
 > {: .solution}
 >{: .bash}
