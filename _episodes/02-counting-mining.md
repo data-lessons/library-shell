@@ -680,15 +680,16 @@ Pair up with your neighbor and work on these exercies:
 {: .challenge}
 
 > ## Finding unique values
-> If you pipe something to the `uniq` command, it will filter out duplicate lines
+> If you pipe something to the `uniq` command, it will filter out _adjacent_ duplicate lines
 > and only return unique ones. Try piping the output from the command in the last exercise
-> to `uniq` and then to `wc -l` to count the number of unique ISSN values.
+> to `sort` (so that all idential ISSNs are adjacent) and then `uniq` and then to `wc -l` to count the number of unique ISSN values.
+>
 > Note: This exercise requires the `-o` flag. See the callout box "Invalid option -- o?"
 > above.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv | uniq | wc -l
+> > $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv | sort | uniq | wc -l
 > > ~~~
 > > {: .bash}
 > {: .solution}
